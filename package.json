@@ -5,7 +5,7 @@
    "main": "index.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node src/model/index.js",
+      "start": "node src/models/index.js",
       "build-src": "babel src -d build --copy-files",
       "build": "node build/server.js"
    },
