@@ -11,7 +11,7 @@ const db = {};
 let sequelize;
 const customizeConfig = {
    host: process.env.DB_HOST,
-   port: process.env.PORT,
+   port: process.env.DB_PORT,
    dialect: "postgres",
    logging: false,
    dialectOptions:
