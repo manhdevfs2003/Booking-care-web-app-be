@@ -44,7 +44,7 @@ initWebRoutes(app);
 
 connectDB();
 
-let port = process.env.PORT || 8080; //Port === undefined => Port = 6060
+let port = process.env.PORT || 4000; //Port === undefined => Port = 6060
 
 app.listen(port, () => {
    //callback
