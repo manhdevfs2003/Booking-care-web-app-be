@@ -1,24 +1,28 @@
-'use strict';
+"use strict";
 
 module.exports = {
-
-
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Users', [{
-      email: 'admin@gmail.com',
-      password: '123456',
-      firstName: 'Nguyen',
-      lastName: 'Rin',
-      address: 'HCM',
-      gender: 1,
-      typeRole: 'ROLE',
-      keyRole: 'R1',
+    return queryInterface.bulkInsert(
+      "Users",
+      [
+        {
+          email: "admin@gmail.com",
+          password: "123456",
+          firstName: "Nguyen",
+          lastName: "Rin",
+          address: "HCM",
+          gender: 1,
+          typeRole: "ROLE",
+          keyRole: "R1",
 
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }], {});
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
   },
-//viet code in ra so 1  
+  //viet code in ra so 1
   down: async (queryInterface, Sequelize) => {
     /**
      * Add commands to revert seed here.
@@ -26,5 +30,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };
