@@ -1,7 +1,4 @@
-import { defaults, times } from "lodash";
 import db from "../models/index";
-import { where } from "sequelize";
-import { raw } from "body-parser";
 import emailService from "./emailService";
 require("dotenv").config();
 import { v4 as uuidv4 } from "uuid";
