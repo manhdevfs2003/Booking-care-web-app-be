@@ -268,7 +268,7 @@ let getScheduleByDate = (doctorId, dateTimestamp) => {
       let dataSchedule = await db.Schedule.findAll({
         where: {
           doctorId: doctorId,
-          date: date, // So sánh với giá trị trong database
+          date: date,
         },
         include: [
           {
@@ -288,7 +288,7 @@ let getScheduleByDate = (doctorId, dateTimestamp) => {
 
       resolve({
         errCode: 0,
-        data: dataSchedule || [],
+        data: dataSchedule,
       });
     } catch (e) {
       reject(e);
