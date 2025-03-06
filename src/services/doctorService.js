@@ -264,7 +264,7 @@ let getScheduleByDate = (doctorId, dateTimestamp) => {
       // Điều chỉnh timestamp về UTC trước khi lấy ngày
       dateObj.setMinutes(dateObj.getMinutes() - dateObj.getTimezoneOffset());
       let date = dateObj.toISOString().split("T")[0]; // YYYY-MM-DD
-
+      console.log("date", date);
       let dataSchedule = await db.Schedule.findAll({
         where: {
           doctorId: doctorId,
