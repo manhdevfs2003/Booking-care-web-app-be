@@ -9,10 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Specialty.hasMany(models.Doctor_Infor, {
-        foreignKey: "specialtyId",
-        as: "doctors", // Đặt alias hợp lý hơn
-      });
+   
     }
   }
   Specialty.init(

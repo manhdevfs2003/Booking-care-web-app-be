@@ -252,13 +252,8 @@ let getScheduleByDate = (doctorId, dateTimestamp) => {
         });
       }
 
-      // Kiểm tra kiểu dữ liệu đầu vào
-      console.log("Received timestamp:", dateTimestamp);
-
-      // Chuyển timestamp về UTC để tránh lệch múi giờ
       let dateObj = new Date(Number(dateTimestamp));
 
-      // Kiểm tra lỗi timestamp không hợp lệ
       if (isNaN(dateObj.getTime())) {
         return resolve({
           errCode: 2,
@@ -269,8 +264,6 @@ let getScheduleByDate = (doctorId, dateTimestamp) => {
       // Điều chỉnh timestamp về UTC trước khi lấy ngày
       dateObj.setMinutes(dateObj.getMinutes() - dateObj.getTimezoneOffset());
       let date = dateObj.toISOString().split("T")[0]; // YYYY-MM-DD
-
-      console.log("Converted date:", date);
 
       let dataSchedule = await db.Schedule.findAll({
         where: {
@@ -433,8 +426,6 @@ let getListPatientsForDoctor = (doctorId, date) => {
       } else {
         let dateObj = new Date(parseInt(date));
         let formattedDate = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, "0")}-${String(dateObj.getDate()).padStart(2, "0")} 00:00:00`;
-
-        console.log(formattedDate); // "2025-02-27 00:00:00"
 
         let data = await db.Booking.findAll({
           where: { statusId: "S2", doctorId: doctorId, date: formattedDate },
