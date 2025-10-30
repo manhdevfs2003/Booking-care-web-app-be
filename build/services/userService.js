@@ -41,7 +41,7 @@ var handleUserLogin = function handleUserLogin(email, password) {
               break;
             }
             _context.next = 12;
-            return _bcryptjs["default"].compare(password, user.password);
+            return _bcryptjs["default"].compare(password, user.password.toString());
           case 12:
             check = _context.sent;
             // Cách 2: dùng synchronous  (đồng bộ)
